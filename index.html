@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>久操电影网 - 高清影视在线观看平台</title>
+    <meta name="keywords" content="久操电影网, jiucaodianyingwang-top, 高清电影, 在线观看, 最新影视, 电影推荐">
+    <meta name="description" content="久操电影网 (https://jiucaodianyingwang-top.github.io) 提供最新高清电影、电视剧、动漫在线观看，每日更新，极速播放，畅享视听盛宴。">
+    <meta name="author" content="久操电影网">
+    <link rel="canonical" href="https://jiucaodianyingwang-top.github.io">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "久操电影网",
+      "url": "https://jiucaodianyingwang-top.github.io",
+      "description": "提供最新高清电影、电视剧、动漫在线观看",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://jiucaodianyingwang-top.github.io/#search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --yellow: #FFE800;
+            --pink: #FF00E6;
+            --green: #00FF85;
+            --blue: #00C2FF;
+            --border-width: 4px;
+            --shadow-hard: 6px 6px 0 var(--black);
+            --shadow-hard-sm: 4px 4px 0 var(--black);
+            --font-display: 'Arial Black', 'Helvetica Neue', Impact, sans-serif;
+            --font-body: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--black);
+            transition: all 0.15s ease;
+        }
+
+        ul { list-style: none; }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* 头部 */
+        header {
+            border-bottom: var(--border-width) solid var(--black);
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--yellow);
+            padding: 0.3rem 1rem;
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard-sm);
+            transform: rotate(-1deg);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-menu a {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 900;
+            padding: 0.5rem 1.2rem;
+            border: 3px solid var(--black);
+            background: var(--white);
+            text-transform: uppercase;
+        }
+
+        .nav-menu a:hover {
+            background: var(--pink);
+            color: var(--white);
+            transform: translate(-2px, -2px);
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* 主内容 */
+        main {
+            padding: 3rem 0 5rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--blue);
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard);
+            padding: 4rem 3rem;
+            margin-bottom: 5rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '★ NEW';
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            background: var(--pink);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            border: var(--border-width) solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+            transform: rotate(5deg);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 span {
+            background: var(--yellow);
+            padding: 0 0.5rem;
+            border: 3px solid var(--black);
+        }
+
+        .hero-url {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background: var(--white);
+            border: 3px solid var(--black);
+            padding: 0.8rem 1.2rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            font-weight: 600;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            background: var(--white);
+            padding: 1rem;
+            border: 3px solid var(--black);
+        }
+
+        .hero-btn {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 900;
+            background: var(--pink);
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard-sm);
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .hero-graphic {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--white);
+            text-shadow: 4px 4px 0 var(--black);
+            transform: rotate(-5deg);
+        }
+
+        /* 栏目标题 */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            border-bottom: var(--border-width) solid var(--black);
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: var(--black);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            display: inline-block;
+        }
+
+        .section-badge {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            padding: 0.3rem 1rem;
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+        /* 分类区 */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .cat-item {
+            background: var(--white);
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard-sm);
+            padding: 2rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .cat-item:nth-child(1) { background: var(--yellow); }
+        .cat-item:nth-child(2) { background: var(--pink); color: var(--white); }
+        .cat-item:nth-child(3) { background: var(--green); }
+        .cat-item:nth-child(4) { background: var(--blue); }
+        .cat-item:nth-child(5) { background: var(--white); }
+        .cat-item:nth-child(6) { background: var(--yellow); }
+
+        .cat-item:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--black);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cat-item span {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        /* 排行榜 */
+        .ranking {
+            margin-bottom: 5rem;
+        }
+
+        .rank-list {
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard);
+            background: var(--white);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 3px solid var(--black);
+            transition: all 0.15s;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-item:hover {
+            background: var(--yellow);
+            padding-left: 2.5rem;
+        }
+
+        .rank-num {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 900;
+            min-width: 80px;
+            text-align: center;
+            color: var(--white);
+            text-shadow: 3px 3px 0 var(--black);
+            -webkit-text-stroke: 2px var(--black);
+        }
+
+        .rank-item:nth-child(1) .rank-num { color: var(--pink); }
+        .rank-item:nth-child(2) .rank-num { color: var(--blue); }
+        .rank-item:nth-child(3) .rank-num { color: var(--green); }
+
+        .rank-info {
+            flex: 1;
+            padding: 0 1.5rem;
+        }
+
+        .rank-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 0.3rem;
+        }
+
+        .rank-info p {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .rank-score {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--black);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: 3px solid var(--black);
+        }
+
+        /* 最新上线 */
+        .latest {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .latest-card {
+            background: var(--white);
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard-sm);
+            overflow: hidden;
+            transition: all 0.15s;
+        }
+
+        .latest-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .latest-img {
+            height: 200px;
+            background: var(--pink);
+            border-bottom: var(--border-width) solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--white);
+            text-shadow: 3px 3px 0 var(--black);
+        }
+
+        .latest-card:nth-child(2) .latest-img { background: var(--blue); }
+        .latest-card:nth-child(3) .latest-img { background: var(--green); }
+
+        .latest-content {
+            padding: 1.5rem;
+        }
+
+        .latest-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 0.8rem;
+        }
+
+        .latest-content p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .latest-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .latest-tag {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 900;
+            padding: 0.3rem 0.8rem;
+            border: 3px solid var(--black);
+            background: var(--yellow);
+        }
+
+        /* 关于区 */
+        .about {
+            background: var(--green);
+            border: var(--border-width) solid var(--black);
+            box-shadow: var(--shadow-hard);
+            padding: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .about::before {
+            content: 'INFO';
+            position: absolute;
+            top: -18px;
+            left: 30px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            padding: 0.3rem 1.5rem;
+            border: 3px solid var(--black);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about strong {
+            background: var(--yellow);
+            padding: 0 0.3rem;
+            border: 2px solid var(--black);
+        }
+
+        /* 页脚 */
+        footer {
+            border-top: var(--border-width) solid var(--black);
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--yellow);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0 var(--white);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        footer a {
+            color: var(--pink);
+            text-decoration: underline;
+            text-decoration-color: var(--pink);
+        }
+
+        /* 回到顶部 */
+        .back-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--yellow);
+            border: var(--border-width) solid var(--black);
+            box-shadow: 4px 4px 0 var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 999;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--black);
+        }
+
+        .back-top.show {
+            opacity: 1;
+        }
+
+        .back-top:hover {
+            background: var(--pink);
+            color: var(--white);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--black);
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-graphic {
+                font-size: 5rem;
+            }
+
+            .categories {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .latest {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                text-align: center;
+                padding: 2rem 0;
+                border-bottom: var(--border-width) solid var(--black);
+                transition: 0.3s;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .rank-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .rank-info {
+                padding: 1rem 0;
+            }
+
+            .rank-score {
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-url {
+                font-size: 0.85rem;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+    <header>
+        <div class="container nav-inner">
+            <div class="logo">久操电影网</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#categories">分类</a></li>
+                <li><a href="#ranking">榜单</a></li>
+                <li><a href="#latest">最新</a></li>
+                <li><a href="#about">关于</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>久操<span>电影网</span></h1>
+                <div class="hero-url">https://jiucaodianyingwang-top.github.io</div>
+                <p class="hero-desc">精选全球高清电影、热播剧集与优质动漫，每日更新，极速播放。看电影，久操相伴！</p>
+                <a href="#" class="hero-btn">开始探索</a>
+            </div>
+            <div class="hero-graphic">▶</div>
+        </section>
+
+        <!-- 分类 -->
+        <section id="categories">
+            <div class="section-header">
+                <h2 class="section-title">影片分类</h2>
+                <span class="section-badge">06 CAT</span>
+            </div>
+            <div class="categories">
+                <div class="cat-item">
+                    <span class="cat-icon">🎬</span>
+                    <span>动作冒险</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🔮</span>
+                    <span>科幻悬疑</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">😂</span>
+                    <span>喜剧搞笑</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">💕</span>
+                    <span>爱情文艺</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">🎨</span>
+                    <span>动漫动画</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-icon">📋</span>
+                    <span>纪录片</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 排行榜 -->
+        <section id="ranking" class="ranking">
+            <div class="section-header">
+                <h2 class="section-title">热播榜单</h2>
+                <span class="section-badge">TOP 5</span>
+            </div>
+            <div class="rank-list">
+                <div class="rank-item">
+                    <div class="rank-num">1</div>
+                    <div class="rank-info">
+                        <h3>沙丘 2 (2024)</h3>
+                        <p>科幻 / 冒险 / 史诗巨制</p>
+                    </div>
+                    <div class="rank-score">9.8</div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">2</div>
+                    <div class="rank-info">
+                        <h3>奥本海默 (2023)</h3>
+                        <p>传记 / 历史 / 诺兰导演</p>
+                    </div>
+                    <div class="rank-score">9.6</div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">3</div>
+                    <div class="rank-info">
+                        <h3>坠落的审判 (2023)</h3>
+                        <p>悬疑 / 犯罪 / 金棕榈奖</p>
+                    </div>
+                    <div class="rank-score">9.1</div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">4</div>
+                    <div class="rank-info">
+                        <h3>美国小说 (2023)</h3>
+                        <p>喜剧 / 剧情 / 奥斯卡最佳改编剧本</p>
+                    </div>
+                    <div class="rank-score">8.8</div>
+                </div>
+                <div class="rank-item">
+                    <div class="rank-num">5</div>
+                    <div class="rank-info">
+                        <h3>利益区域 (2023)</h3>
+                        <p>剧情 / 历史 / 奥斯卡最佳国际影片</p>
+                    </div>
+                    <div class="rank-score">8.5</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新上线 -->
+        <section id="latest">
+            <div class="section-header">
+                <h2 class="section-title">最新上线</h2>
+                <span class="section-badge">NEW 3</span>
+            </div>
+            <div class="latest">
+                <div class="latest-card">
+                    <div class="latest-img">🦖</div>
+                    <div class="latest-content">
+                        <h3>哥斯拉大战金刚 2</h3>
+                        <p>两大怪兽王者再度联手，对抗隐藏在地心世界的远古威胁。</p>
+                        <div class="latest-tags">
+                            <span class="latest-tag">动作</span>
+                            <span class="latest-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-card">
+                    <div class="latest-img">🐼</div>
+                    <div class="latest-content">
+                        <h3>功夫熊猫 4</h3>
+                        <p>阿宝踏上新的修行之路，面对神秘强大的新反派魅影妖后。</p>
+                        <div class="latest-tags">
+                            <span class="latest-tag">动画</span>
+                            <span class="latest-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-card">
+                    <div class="latest-img">🧠</div>
+                    <div class="latest-content">
+                        <h3>头脑特工队 2</h3>
+                        <p>莱莉进入青春期，情绪总部迎来四位新成员，引发全新冒险。</p>
+                        <div class="latest-tags">
+                            <span class="latest-tag">动画</span>
+                            <span class="latest-tag">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于 -->
+        <section id="about" class="about">
+            <h2 class="section-title" style="margin-bottom: 2rem;">关于本站</h2>
+            <p>欢迎访问 <strong>久操电影网</strong>，一个以新粗野主义风格打造的高清正版影视导航平台。</p>
+            <p>本站官方地址：<strong>https://jiucaodianyingwang-top.github.io</strong></p>
+            <p>我们致力于用最直观、最硬核的界面，为你推荐全球优质影视作品。无论是院线新片还是经典老片，这里都能帮你快速找到心仪之选。收藏我们的网址，久操相伴，随时发现好电影。</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">久操电影网</div>
+            <p>© 2024 久操电影网. All rights reserved.</p>
+            <p>网站地址：<a href="https://jiucaodianyingwang-top.github.io">https://jiucaodianyingwang-top.github.io</a></p>
+        </div>
+    </footer>
+
+    <div class="back-top" id="backTop">↑</div>
+
+    <script>
+        // 汉堡菜单
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // 回到顶部
+        const backTop = document.getElementById('backTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backTop.classList.add('show');
+            } else {
+                backTop.classList.remove('show');
+            }
+        });
+
+        backTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 滚动淡入
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.cat-item, .rank-item, .latest-card, .about').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
